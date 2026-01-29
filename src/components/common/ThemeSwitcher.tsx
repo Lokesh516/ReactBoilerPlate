@@ -4,6 +4,11 @@ import { Sun, Moon, Palette, Briefcase, Star, Wind, Sunset, Check } from 'lucide
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setThemeMode, type ThemeMode } from '../../app/slices/themeSlice';
 
+interface ThemeSwitcherProps {
+    dropUp?: boolean;
+    align?: 'left' | 'right';
+}
+
 const themeOptions: { mode: ThemeMode; label: string; icon: typeof Sun; description: string }[] = [
     { mode: 'light', label: 'Light', icon: Sun, description: 'Corporate & Professional' },
     { mode: 'dark', label: 'Dark', icon: Moon, description: 'Modern & Sleek' },
@@ -14,7 +19,7 @@ const themeOptions: { mode: ThemeMode; label: string; icon: typeof Sun; descript
     { mode: 'sunset', label: 'Sunset', icon: Sunset, description: 'Vibrant Orange' },
 ];
 
-export const ThemeSwitcher: React.FC = () => {
+export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ dropUp = false, align = 'right' }) => {
     const dispatch = useAppDispatch();
     const { mode } = useAppSelector((state) => state.theme);
 
@@ -24,6 +29,16 @@ export const ThemeSwitcher: React.FC = () => {
 
     const currentTheme = themeOptions.find((t) => t.mode === mode);
     const CurrentIcon = currentTheme?.icon || Sun;
+
+    const placementClasses = `
+        absolute 
+        ${dropUp ? 'bottom-full mb-2' : 'mt-2'}
+        ${align === 'left' ? 'left-0' : 'right-0'}
+        ${dropUp
+            ? (align === 'left' ? 'origin-bottom-left' : 'origin-bottom-right')
+            : (align === 'left' ? 'origin-top-left' : 'origin-top-right')
+        }
+    `;
 
     return (
         <Menu as="div" className="relative">
@@ -40,7 +55,7 @@ export const ThemeSwitcher: React.FC = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
             >
-                <Menu.Items className="absolute right-0 mt-2 w-64 origin-top-right rounded-xl glass-strong shadow-strong border border-white/20 dark:border-gray-700/50 focus:outline-none overflow-hidden">
+                <Menu.Items className={`${placementClasses} w-64 rounded-xl glass-strong shadow-strong border border-white/20 dark:border-gray-700/50 focus:outline-none overflow-hidden z-50`}>
                     <div className="p-2">
                         {themeOptions.map((theme) => {
                             const Icon = theme.icon;
@@ -59,13 +74,13 @@ export const ThemeSwitcher: React.FC = () => {
                                         >
                                             <div className={`
                         p-2 rounded-lg
-                        ${isActive ? 'bg-primary-500 text-light' : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400'}
+                        ${isActive ? 'bg-primary-500 text-white' : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400'}
                       `}>
                                                 <Icon className="w-4 h-4" />
                                             </div>
 
                                             <div className="flex-1 text-left">
-                                                <div className="font-medium text-light">
+                                                <div className="font-medium text-gray-900 dark:text-white">
                                                     {theme.label}
                                                 </div>
                                                 <div className="text-xs text-gray-500 dark:text-gray-400">

@@ -29,18 +29,33 @@ const Login: React.FC = () => {
         onSubmit: async (values) => {
             dispatch(loginStart());
             try {
-                // Mock API call
                 setTimeout(() => {
-                    const mockUser = {
-                        id: '1',
-                        email: values.email,
-                        firstName: 'Demo',
-                        lastName: 'User',
-                        role: 'admin' as const,
-                    };
-                    dispatch(loginSuccess({ user: mockUser, token: 'mock-jwt-token' }));
-                    // Use replace to prevent back navigation to login
-                    navigate('/', { replace: true });
+                    // Check if user exists in approved_users (from mock backend/localStorage)
+                    const approvedUsers = JSON.parse(localStorage.getItem('approved_users') || '[]');
+                    const approvedUser = approvedUsers.find((u: any) => u.email === values.email);
+
+                    if (approvedUser) {
+                        dispatch(loginSuccess({ user: approvedUser, token: 'mock-jwt-token' }));
+                        navigate('/dashboard', { replace: true });
+                        return;
+                    }
+
+                    // Check for hardcoded Superadmin
+                    if (values.email === 'superadmin@demo.com' && values.password === 'admin123') {
+                        const superUser = {
+                            id: 'superadmin',
+                            email: 'superadmin@demo.com',
+                            firstName: 'Super',
+                            lastName: 'Admin',
+                            role: 'superadmin' as const,
+                        };
+                        dispatch(loginSuccess({ user: superUser, token: 'mock-jwt-token-superadmin' }));
+                        navigate('/dashboard', { replace: true });
+                        return;
+                    }
+
+                    // If we get here, neither approved user nor superadmin match
+                    dispatch(loginFailure(t('messages.invalidCredentials')));
                 }, 1000);
             } catch (err) {
                 dispatch(loginFailure(t('messages.invalidCredentials')));
@@ -103,10 +118,7 @@ const Login: React.FC = () => {
                     size="lg"
                     className="mt-6"
                 >
-                    <span className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${location.pathname === '/'
-                        ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 font-medium'
-                        : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800'
-                        }`}>{t('login.submit')}</span>
+                    <span className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors`}>{t('login.submit')}</span>
                 </EiButton>
             </form>
 
@@ -116,12 +128,6 @@ const Login: React.FC = () => {
                     <Link to="/register" className="font-medium text-primary-600 hover:text-primary-500 dark:text-primary-400">
                         {t('login.register')}
                     </Link>
-                </p>
-            </div>
-
-            <div className="mt-6 p-4 rounded-lg bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800">
-                <p className="text-sm text-blue-800 dark:text-blue-200 text-center">
-                    <strong>Demo:</strong> Use any email and password (min 6 chars)
                 </p>
             </div>
         </AuthLayout>

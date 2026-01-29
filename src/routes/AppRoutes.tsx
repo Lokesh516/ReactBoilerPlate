@@ -8,6 +8,7 @@ const Login = React.lazy(() => import('@/features/auth/routes/Login'));
 const Register = React.lazy(() => import('@/features/auth/routes/Register'));
 const Dashboard = React.lazy(() => import('@/features/dashboard/routes/Dashboard'));
 const MonitoringRoutes = React.lazy(() => import('@/features/monitoring/routes/MonitoringRoutes'));
+const UserManagement = React.lazy(() => import('@/features/admin/routes/UserManagement'));
 
 const LoadingFallback = () => (
     <div className="min-h-screen flex items-center justify-center">
@@ -29,7 +30,7 @@ const PublicRoute = () => {
     const { isAuthenticated } = useAppSelector((state) => state.auth);
 
     if (isAuthenticated) {
-        return <Navigate to="/" replace />;
+        return <Navigate to="/dashboard" replace />;
     }
 
     return <Outlet />;
@@ -47,13 +48,15 @@ export const AppRoutes = () => {
 
                 {/* Protected Routes */}
                 <Route element={<ProtectedRoute />}>
-                    <Route path="/" element={<Dashboard />} />
-                    <Route path="/dashboard/monitoring/*" element={<MonitoringRoutes />} />
+                    <Route path="/" element={<Navigate to="/dashboard" replace />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/monitoring/*" element={<MonitoringRoutes />} />
+                    <Route path="/admin/users" element={<UserManagement />} />
                     {/* Add more protected routes here */}
                 </Route>
 
                 {/* 404 */}
-                <Route path="*" element={<Navigate to="/" replace />} />
+                <Route path="*" element={<Navigate to="/dashboard" replace />} />
             </Routes>
         </Suspense>
     );

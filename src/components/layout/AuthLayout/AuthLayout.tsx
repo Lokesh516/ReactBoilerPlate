@@ -21,7 +21,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title }) => {
                     {/* Logo */}
                     <div className="flex justify-center mb-6">
                         <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-glow">
-                            <span className="text-white font-bold text-3xl">Ei</span>
+                            <span className="text-white dark:text-gray-900 font-bold text-3xl">Ei</span>
                         </div>
                     </div>
 
@@ -31,7 +31,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title }) => {
                     </h1>
 
                     {title && (
-                        <p className="text-center text-gray-600 dark:text-gray-400 mb-8">
+                        <p className="text-center text-primary-600 dark:text-primary-400 mb-8 font-medium">
                             {title}
                         </p>
                     )}

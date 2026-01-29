@@ -14,6 +14,8 @@
   --color-primary-hover: 25 118 210;
   --color-secondary: 245 0 87;
   --color-accent: 99 102 241;
+  --color-text-on-primary: 255 255 255;
+  --color-text-on-secondary: 255 255 255;
 }
 
 /* Dark Theme */
@@ -29,6 +31,8 @@
   --color-primary-hover: 100 181 246;
   --color-secondary: 244 143 177;
   --color-accent: 129 140 248;
+  --color-text-on-primary: 17 24 39;
+  --color-text-on-secondary: 17 24 39;
 }
 
 /* Emerald Theme */
@@ -44,6 +48,8 @@
   --color-primary-hover: 5 150 105;
   --color-secondary: 99 102 241;
   --color-accent: 79 70 229;
+  --color-text-on-primary: 255 255 255;
+  --color-text-on-secondary: 255 255 255;
 }
 
 .theme-emerald.dark {
@@ -58,6 +64,8 @@
   --color-primary-hover: 110 231 183;
   --color-secondary: 165 180 252;
   --color-accent: 129 140 248;
+  --color-text-on-primary: 255 255 255;
+  --color-text-on-secondary: 255 255 255;
 }
 
 /* Base Styles */
@@ -133,7 +141,7 @@ html {
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(to right, rgb(33, 150, 243), rgb(245, 0, 87));
+  background: linear-gradient(to right, rgb(var(--color-primary)), rgb(var(--color-secondary)));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

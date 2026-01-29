@@ -32,9 +32,22 @@ const Register: React.FC = () => {
         onSubmit: async () => {
             setIsLoading(true);
             try {
-                // Mock Registration
+                // Mock Registration - Store as pending user
                 setTimeout(() => {
+                    const newUser = {
+                        id: Math.random().toString(36).substr(2, 9),
+                        name: formik.values.name,
+                        email: formik.values.email,
+                        status: 'pending',
+                        timestamp: new Date().toISOString(),
+                    };
+
+                    const existingPending = JSON.parse(localStorage.getItem('pending_users') || '[]');
+                    localStorage.setItem('pending_users', JSON.stringify([...existingPending, newUser]));
+
                     setIsLoading(false);
+                    // navigate('/login'); // Could redirect to a "Registration Successful" page or login
+                    alert('Registration successful! Your account is pending approval by an admin.');
                     navigate('/login');
                 }, 1500);
             } catch (err) {

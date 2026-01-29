@@ -12,6 +12,8 @@ export interface ThemeColors {
     textSecondary: string;
     textTertiary: string;
     border: string;
+    textOnPrimary: string;
+    textOnSecondary: string;
 }
 
 export const themeConfig: Record<ThemeMode, { name: string; description: string; icon: string; colors: ThemeColors }> = {
@@ -31,6 +33,8 @@ export const themeConfig: Record<ThemeMode, { name: string; description: string;
             textSecondary: '75 85 99',
             textTertiary: '156 163 175',
             border: '229 231 235',
+            textOnPrimary: '255 255 255',
+            textOnSecondary: '255 255 255',
         },
     },
     dark: {
@@ -49,6 +53,8 @@ export const themeConfig: Record<ThemeMode, { name: string; description: string;
             textSecondary: '209 213 219', // #d1d5db
             textTertiary: '156 163 175', // #9ca3af
             border: '55 65 81', // #374151
+            textOnPrimary: '17 24 39', // Dark text on light primary
+            textOnSecondary: '17 24 39', // Dark text on light secondary
         },
     },
     emerald: {
@@ -67,6 +73,8 @@ export const themeConfig: Record<ThemeMode, { name: string; description: string;
             textSecondary: '6 95 70',
             textTertiary: '52 211 153',
             border: '187 247 208',
+            textOnPrimary: '255 255 255',
+            textOnSecondary: '255 255 255',
         },
     },
     corporate: {
@@ -85,6 +93,8 @@ export const themeConfig: Record<ThemeMode, { name: string; description: string;
             textSecondary: '51 65 85',
             textTertiary: '148 163 184',
             border: '226 232 240',
+            textOnPrimary: '255 255 255',
+            textOnSecondary: '255 255 255',
         },
     },
     midnight: {
@@ -103,6 +113,8 @@ export const themeConfig: Record<ThemeMode, { name: string; description: string;
             textSecondary: '178 223 219', // #b2dfdb
             textTertiary: '148 163 184',
             border: '51 65 85',
+            textOnPrimary: '17 24 39', // Dark text on Cyan
+            textOnSecondary: '255 255 255', // White text on Purple
         },
     },
     nord: {
@@ -121,6 +133,8 @@ export const themeConfig: Record<ThemeMode, { name: string; description: string;
             textSecondary: '216 222 233', // #d8dee9
             textTertiary: '216 222 233',
             border: '76 86 106',
+            textOnPrimary: '46 52 64', // Dark text on light blue
+            textOnSecondary: '46 52 64', // Dark text on light orange
         },
     },
     sunset: {
@@ -139,6 +153,8 @@ export const themeConfig: Record<ThemeMode, { name: string; description: string;
             textSecondary: '154 52 18',
             textTertiary: '253 186 116',
             border: '254 215 170',
+            textOnPrimary: '255 255 255',
+            textOnSecondary: '255 255 255',
         },
     },
 };

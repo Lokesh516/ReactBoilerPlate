@@ -90,5 +90,43 @@
             },
             "topPages": "Pages populaires"
         }
+    },
+    "userManagement": {
+        "title": "Gestion des utilisateurs",
+        "subtitle": "Gérer les inscriptions et les rôles des utilisateurs.",
+        "pendingApprovals": {
+            "title": "Approbations en attente",
+            "noPending": "Aucun utilisateur en attente trouvé."
+        },
+        "registeredUsers": {
+            "title": "Utilisateurs enregistrés",
+            "noRegistered": "Aucun utilisateur enregistré trouvé."
+        },
+        "columns": {
+            "name": "Nom",
+            "email": "Email",
+            "registered": "Inscrit",
+            "actions": "Actions",
+            "currentRole": "Rôle actuel",
+            "switchRole": "Changer de rôle"
+        },
+        "buttons": {
+            "admin": "Admin",
+            "user": "Utilisateur",
+            "makeAdmin": "Rendre Admin",
+            "makeUser": "Rendre Utilisateur",
+            "reject": "Rejeter",
+            "title": {
+                "approveAdmin": "Approuver comme Admin",
+                "approveUser": "Approuver comme Utilisateur",
+                "reject": "Rejeter",
+                "demote": "Rétrograder en Utilisateur",
+                "promote": "Promouvoir en Admin"
+            }
+        },
+        "alerts": {
+            "userApproved": "Utilisateur approuvé en tant que {{role}}",
+            "roleUpdated": "Rôle de l'utilisateur mis à jour à {{role}}"
+        }
     }
 }

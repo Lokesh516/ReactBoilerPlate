@@ -90,5 +90,43 @@
             },
             "topPages": "Top Pages"
         }
+    },
+    "userManagement": {
+        "title": "User Management",
+        "subtitle": "Manage user registrations and roles.",
+        "pendingApprovals": {
+            "title": "Pending Approvals",
+            "noPending": "No pending users found."
+        },
+        "registeredUsers": {
+            "title": "Registered Users",
+            "noRegistered": "No registered users found."
+        },
+        "columns": {
+            "name": "Name",
+            "email": "Email",
+            "registered": "Registered",
+            "actions": "Actions",
+            "currentRole": "Current Role",
+            "switchRole": "Switch Role"
+        },
+        "buttons": {
+            "admin": "Admin",
+            "user": "User",
+            "makeAdmin": "Make Admin",
+            "makeUser": "Make User",
+            "reject": "Reject",
+            "title": {
+                "approveAdmin": "Approve as Admin",
+                "approveUser": "Approve as User",
+                "reject": "Reject",
+                "demote": "Demote to User",
+                "promote": "Promote to Admin"
+            }
+        },
+        "alerts": {
+            "userApproved": "User approved as {{role}}",
+            "roleUpdated": "User role updated to {{role}}"
+        }
     }
 }

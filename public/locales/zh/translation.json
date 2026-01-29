@@ -90,5 +90,43 @@
             },
             "topPages": "热门页面"
         }
+    },
+    "userManagement": {
+        "title": "用户管理",
+        "subtitle": "管理用户注册和角色。",
+        "pendingApprovals": {
+            "title": "待批准",
+            "noPending": "未发现待批准用户。"
+        },
+        "registeredUsers": {
+            "title": "已注册用户",
+            "noRegistered": "未发现已注册用户。"
+        },
+        "columns": {
+            "name": "姓名",
+            "email": "电子邮件",
+            "registered": "注册时间",
+            "actions": "操作",
+            "currentRole": "当前角色",
+            "switchRole": "切换角色"
+        },
+        "buttons": {
+            "admin": "管理员",
+            "user": "用户",
+            "makeAdmin": "设为管理员",
+            "makeUser": "设为用户",
+            "reject": "拒绝",
+            "title": {
+                "approveAdmin": "批准为管理员",
+                "approveUser": "批准为用户",
+                "reject": "拒绝",
+                "demote": "降级为用户",
+                "promote": "提升为管理员"
+            }
+        },
+        "alerts": {
+            "userApproved": "用户已批准为 {{role}}",
+            "roleUpdated": "用户角色已更新为 {{role}}"
+        }
     }
 }

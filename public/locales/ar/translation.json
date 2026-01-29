@@ -90,5 +90,43 @@
             },
             "topPages": "أفضل الصفحات"
         }
+    },
+    "userManagement": {
+        "title": "إدارة المستخدمين",
+        "subtitle": "إدارة تسجيلات المستخدمين والأدوار.",
+        "pendingApprovals": {
+            "title": "الموافقات المعلقة",
+            "noPending": "لم يتم العثور على مستخدمين معلقين."
+        },
+        "registeredUsers": {
+            "title": "المستخدمون المسجلون",
+            "noRegistered": "لم يتم العثور على مستخدمين مسجلين."
+        },
+        "columns": {
+            "name": "الاسم",
+            "email": "البريد الإلكتروني",
+            "registered": "مسجل",
+            "actions": "إجراءات",
+            "currentRole": "الدور الحالي",
+            "switchRole": "تبديل الدور"
+        },
+        "buttons": {
+            "admin": "مسؤول",
+            "user": "مستخدم",
+            "makeAdmin": "اجعله مسؤولاً",
+            "makeUser": "اجعله مستخدماً",
+            "reject": "رفض",
+            "title": {
+                "approveAdmin": "الموافقة كمسؤول",
+                "approveUser": "الموافقة كمستخدم",
+                "reject": "رفض",
+                "demote": "تخفيض الرتبة إلى مستخدم",
+                "promote": "الترقية إلى مسؤول"
+            }
+        },
+        "alerts": {
+            "userApproved": "تمت الموافقة على المستخدم كـ {{role}}",
+            "roleUpdated": "تم تحديث دور المستخدم إلى {{role}}"
+        }
     }
 }

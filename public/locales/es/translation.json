@@ -90,5 +90,43 @@
             },
             "topPages": "Páginas Principales"
         }
+    },
+    "userManagement": {
+        "title": "Gestión de Usuarios",
+        "subtitle": "Gestionar registros de usuarios y roles.",
+        "pendingApprovals": {
+            "title": "Aprobaciones Pendientes",
+            "noPending": "No se encontraron usuarios pendientes."
+        },
+        "registeredUsers": {
+            "title": "Usuarios Registrados",
+            "noRegistered": "No se encontraron usuarios registrados."
+        },
+        "columns": {
+            "name": "Nombre",
+            "email": "Correo Electrónico",
+            "registered": "Registrado",
+            "actions": "Acciones",
+            "currentRole": "Rol Actual",
+            "switchRole": "Cambiar Rol"
+        },
+        "buttons": {
+            "admin": "Admin",
+            "user": "Usuario",
+            "makeAdmin": "Hacer Admin",
+            "makeUser": "Hacer Usuario",
+            "reject": "Rechazar",
+            "title": {
+                "approveAdmin": "Aprobar como Admin",
+                "approveUser": "Aprobar como Usuario",
+                "reject": "Rechazar",
+                "demote": "Degradar a Usuario",
+                "promote": "Promover a Admin"
+            }
+        },
+        "alerts": {
+            "userApproved": "Usuario aprobado como {{role}}",
+            "roleUpdated": "Rol de usuario actualizado a {{role}}"
+        }
     }
 }
