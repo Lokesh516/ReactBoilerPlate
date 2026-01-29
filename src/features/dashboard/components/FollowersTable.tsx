@@ -20,7 +20,7 @@ export const FollowersTable: React.FC = () => {
                 <img
                     src={row.avatar_url}
                     alt={row.login}
-                    className="w-10 h-10 rounded-full ring-2 ring-gray-200 dark:ring-gray-700"
+                    className="w-10 h-10 rounded-full ring-2 ring-theme-border"
                 />
             ),
         },
@@ -30,7 +30,7 @@ export const FollowersTable: React.FC = () => {
             width: 200,
             sortable: true,
             renderCell: (row) => (
-                <span className="font-medium text-gray-900 dark:text-gray-100">
+                <span className="font-medium text-theme-text-primary">
                     {row.login}
                 </span>
             ),

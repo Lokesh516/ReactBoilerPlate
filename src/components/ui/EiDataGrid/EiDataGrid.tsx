@@ -80,23 +80,23 @@ export const EiDataGrid = <T extends Record<string, any>>({
     };
 
     return (
-        <div className={twMerge(clsx('bg-white dark:bg-gray-800 theme-emerald:bg-emerald-50 theme-emerald:dark:bg-emerald-900 rounded-xl border border-gray-200 dark:border-gray-700 theme-emerald:border-emerald-200 theme-emerald:dark:border-emerald-700 shadow-soft overflow-hidden', className))}>
+        <div className={twMerge(clsx('bg-theme-bg-secondary rounded-xl border border-theme-border shadow-soft overflow-hidden', className))}>
             {title && (
-                <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 theme-emerald:border-emerald-200 theme-emerald:dark:border-emerald-700">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 theme-emerald:text-emerald-900 theme-emerald:dark:text-emerald-100">{title}</h3>
+                <div className="px-6 py-4 border-b border-theme-border">
+                    <h3 className="text-lg font-semibold text-theme-text-primary">{title}</h3>
                 </div>
             )}
 
             <div style={{ height }} className="overflow-auto">
                 <table className="w-full">
-                    <thead className="bg-gray-50 dark:bg-gray-900 theme-emerald:bg-emerald-100 theme-emerald:dark:bg-emerald-800 sticky top-0 z-10">
+                    <thead className="bg-theme-bg-tertiary sticky top-0 z-10">
                         <tr>
                             {columns.map((column) => (
                                 <th
                                     key={column.field}
                                     className={clsx(
-                                        'px-6 py-3 text-left text-xs font-semibold text-gray-700 dark:text-gray-300 theme-emerald:text-emerald-800 theme-emerald:dark:text-emerald-200 uppercase tracking-wider border-b border-gray-200 dark:border-gray-700 theme-emerald:border-emerald-200 theme-emerald:dark:border-emerald-700',
-                                        column.sortable && 'cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 theme-emerald:hover:bg-emerald-200 theme-emerald:dark:hover:bg-emerald-700 transition-colors'
+                                        'px-6 py-3 text-left text-xs font-semibold text-theme-text-secondary uppercase tracking-wider border-b border-theme-border',
+                                        column.sortable && 'cursor-pointer hover:bg-theme-bg-primary transition-colors'
                                     )}
                                     style={{ width: column.width, flex: column.flex }}
                                     onClick={() => handleSort(column.field, column.sortable)}
@@ -115,19 +115,19 @@ export const EiDataGrid = <T extends Record<string, any>>({
                             ))}
                         </tr>
                     </thead>
-                    <tbody className="divide-y divide-gray-200 dark:divide-gray-700 theme-emerald:divide-emerald-200 theme-emerald:dark:divide-emerald-700">
+                    <tbody className="divide-y divide-theme-border">
                         {loading ? (
                             <tr>
                                 <td colSpan={columns.length} className="px-6 py-12 text-center">
                                     <div className="flex flex-col items-center gap-3">
                                         <div className="spinner w-8 h-8" />
-                                        <p className="text-sm text-gray-500 dark:text-gray-400 theme-emerald:text-emerald-600 theme-emerald:dark:text-emerald-300">Loading...</p>
+                                        <p className="text-sm text-theme-text-secondary">Loading...</p>
                                     </div>
                                 </td>
                             </tr>
                         ) : paginatedRows.length === 0 ? (
                             <tr>
-                                <td colSpan={columns.length} className="px-6 py-12 text-center text-gray-500 dark:text-gray-400 theme-emerald:text-emerald-600 theme-emerald:dark:text-emerald-300">
+                                <td colSpan={columns.length} className="px-6 py-12 text-center text-theme-text-secondary">
                                     No data available
                                 </td>
                             </tr>
@@ -135,12 +135,12 @@ export const EiDataGrid = <T extends Record<string, any>>({
                             paginatedRows.map((row) => (
                                 <tr
                                     key={getRowId(row)}
-                                    className="hover:bg-gray-50 dark:hover:bg-gray-900/50 theme-emerald:hover:bg-emerald-100/50 theme-emerald:dark:hover:bg-emerald-800/50 transition-colors"
+                                    className="hover:bg-theme-bg-tertiary transition-colors"
                                 >
                                     {columns.map((column) => (
                                         <td
                                             key={column.field}
-                                            className="px-6 py-4 text-sm text-gray-900 dark:text-gray-100 theme-emerald:text-emerald-900 theme-emerald:dark:text-emerald-100"
+                                            className="px-6 py-4 text-sm text-theme-text-primary"
                                             style={{ width: column.width, flex: column.flex }}
                                         >
                                             {column.renderCell ? column.renderCell(row) : row[column.field]}
@@ -154,16 +154,16 @@ export const EiDataGrid = <T extends Record<string, any>>({
             </div>
 
             {/* Pagination */}
-            <div className="px-6 py-4 border-t border-gray-200 dark:border-gray-700 theme-emerald:border-emerald-200 theme-emerald:dark:border-emerald-700 flex items-center justify-between bg-gray-50 dark:bg-gray-900/50 theme-emerald:bg-emerald-100/50 theme-emerald:dark:bg-emerald-800/50">
+            <div className="px-6 py-4 border-t border-theme-border flex items-center justify-between bg-theme-bg-tertiary">
                 <div className="flex items-center gap-2">
-                    <span className="text-sm text-gray-700 dark:text-gray-300 theme-emerald:text-emerald-800 theme-emerald:dark:text-emerald-200">Rows per page:</span>
+                    <span className="text-sm text-theme-text-secondary">Rows per page:</span>
                     <select
                         value={pageSize}
                         onChange={(e) => {
                             setPageSize(Number(e.target.value));
                             setCurrentPage(0);
                         }}
-                        className="px-3 py-1 border border-gray-300 dark:border-gray-600 theme-emerald:border-emerald-300 theme-emerald:dark:border-emerald-700 rounded-lg bg-white dark:bg-gray-800 theme-emerald:bg-white theme-emerald:dark:bg-emerald-900 text-sm text-gray-900 dark:text-gray-100 theme-emerald:text-emerald-900 theme-emerald:dark:text-emerald-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                        className="px-3 py-1 border border-theme-border rounded-lg bg-theme-bg-secondary text-sm text-theme-text-primary focus:outline-none focus:ring-2 focus:ring-primary-500"
                     >
                         {pageSizeOptions.map((size) => (
                             <option key={size} value={size}>
@@ -174,7 +174,7 @@ export const EiDataGrid = <T extends Record<string, any>>({
                 </div>
 
                 <div className="flex items-center gap-2">
-                    <span className="text-sm text-gray-700 dark:text-gray-300">
+                    <span className="text-sm text-theme-text-secondary">
                         {currentPage * pageSize + 1}-{Math.min((currentPage + 1) * pageSize, rows.length)} of {rows.length}
                     </span>
 
@@ -182,28 +182,28 @@ export const EiDataGrid = <T extends Record<string, any>>({
                         <button
                             onClick={() => handlePageChange(0)}
                             disabled={currentPage === 0}
-                            className="p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                            className="p-1 rounded hover:bg-theme-bg-secondary disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                         >
                             <ChevronsLeft className="w-5 h-5" />
                         </button>
                         <button
                             onClick={() => handlePageChange(currentPage - 1)}
                             disabled={currentPage === 0}
-                            className="p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                            className="p-1 rounded hover:bg-theme-bg-secondary disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                         >
                             <ChevronLeft className="w-5 h-5" />
                         </button>
                         <button
                             onClick={() => handlePageChange(currentPage + 1)}
                             disabled={currentPage >= totalPages - 1}
-                            className="p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                            className="p-1 rounded hover:bg-theme-bg-secondary disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                         >
                             <ChevronRight className="w-5 h-5" />
                         </button>
                         <button
                             onClick={() => handlePageChange(totalPages - 1)}
                             disabled={currentPage >= totalPages - 1}
-                            className="p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                            className="p-1 rounded hover:bg-theme-bg-secondary disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                         >
                             <ChevronsRight className="w-5 h-5" />
                         </button>

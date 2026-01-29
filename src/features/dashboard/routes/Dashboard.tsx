@@ -48,10 +48,10 @@ const Dashboard: React.FC = () => {
                 {/* Header */}
                 <div className="flex items-center justify-between">
                     <div>
-                        <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
+                        <h1 className="text-3xl font-bold text-theme-text-primary">
                             {t('dashboard.title')}
                         </h1>
-                        <p className="mt-1 text-gray-600 dark:text-gray-400">
+                        <p className="mt-1 text-theme-text-secondary">
                             {t('dashboard.subtitle')}
                         </p>
                     </div>
@@ -70,10 +70,10 @@ const Dashboard: React.FC = () => {
                             >
                                 <div className="flex items-start justify-between">
                                     <div className="flex-1">
-                                        <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                                        <p className="text-sm font-medium text-theme-text-secondary">
                                             {stat.title}
                                         </p>
-                                        <p className="mt-2 text-3xl font-bold text-gray-900 dark:text-gray-100">
+                                        <p className="mt-2 text-3xl font-bold text-theme-text-primary">
                                             {stat.value}
                                         </p>
                                         <div className="mt-2 flex items-center gap-1">
@@ -81,7 +81,7 @@ const Dashboard: React.FC = () => {
                                             <span className="text-sm font-medium text-emerald-600 dark:text-emerald-400">
                                                 {stat.trend}
                                             </span>
-                                            <span className="text-sm text-gray-500 dark:text-gray-400">
+                                            <span className="text-sm text-theme-text-tertiary">
                                                 {t('dashboard.stats.vsLastMonth')}
                                             </span>
                                         </div>

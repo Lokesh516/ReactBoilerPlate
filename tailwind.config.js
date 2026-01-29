@@ -74,6 +74,13 @@ export default {
                 },
                 'on-primary': 'rgb(var(--color-text-on-primary) / <alpha-value>)',
                 'on-secondary': 'rgb(var(--color-text-on-secondary) / <alpha-value>)',
+                'theme-bg-primary': 'rgb(var(--color-bg-primary) / <alpha-value>)',
+                'theme-bg-secondary': 'rgb(var(--color-bg-secondary) / <alpha-value>)',
+                'theme-bg-tertiary': 'rgb(var(--color-bg-tertiary) / <alpha-value>)',
+                'theme-text-primary': 'rgb(var(--color-text-primary) / <alpha-value>)',
+                'theme-text-secondary': 'rgb(var(--color-text-secondary) / <alpha-value>)',
+                'theme-text-tertiary': 'rgb(var(--color-text-tertiary) / <alpha-value>)',
+                'theme-border': 'rgb(var(--color-border) / <alpha-value>)',
             },
             fontFamily: {
                 sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
