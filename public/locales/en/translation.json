@@ -1,0 +1,94 @@
+{
+    "login": {
+        "title": "Login",
+        "email": "Email Address",
+        "password": "Password",
+        "rememberMe": "Remember me",
+        "submit": "Sign In",
+        "forgotPassword": "Forgot your password?",
+        "noAccount": "Don't have an account?",
+        "register": "Register here"
+    },
+    "register": {
+        "title": "Register",
+        "name": "Full Name",
+        "email": "Email Address",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "submit": "Create Account",
+        "haveAccount": "Already have an account?",
+        "login": "Login here"
+    },
+    "messages": {
+        "loginSuccess": "Login successful",
+        "logoutSuccess": "Logout successful",
+        "invalidCredentials": "Invalid email or password",
+        "sessionExpired": "Your session has expired. Please login again"
+    },
+    "nav": {
+        "dashboard": "Dashboard",
+        "monitoring": "Monitoring",
+        "welcome": "Welcome, {{name}}",
+        "logout": "Logout",
+        "theme": "Theme",
+        "language": "Language"
+    },
+    "dashboard": {
+        "title": "Dashboard Overview",
+        "subtitle": "Welcome back! Here's what's happening today.",
+        "stats": {
+            "users": "Total Users",
+            "revenue": "Revenue",
+            "sessions": "Active Sessions",
+            "vsLastMonth": "vs last month"
+        },
+        "followers": "GitHub Followers"
+    },
+    "table": {
+        "avatar": "Avatar",
+        "username": "Username",
+        "id": "ID",
+        "profile": "Profile",
+        "viewProfile": "View GitHub Profile"
+    },
+    "footer": {
+        "rights": "All rights reserved.",
+        "madeWith": "Made with"
+    },
+    "monitoring": {
+        "dashboard": {
+            "title": "System Monitoring",
+            "tabs": {
+                "api": "API Logs",
+                "pageViews": "Page Views",
+                "system": "System Logs"
+            }
+        },
+        "apiLogs": {
+            "title": "API Logs",
+            "subheader": "Recent backend communication",
+            "columns": {
+                "timestamp": "Timestamp",
+                "endpoint": "Endpoint",
+                "status": "Status",
+                "latency": "Latency"
+            }
+        },
+        "systemLogs": {
+            "title": "System Health",
+            "subheader": "Application event tracking",
+            "allSystemsOperational": "All Systems Operational",
+            "recentEvents": "Recent Events"
+        },
+        "pageViews": {
+            "title": "Page Views",
+            "subheader": "User activity analytics",
+            "stats": {
+                "totalViews": "Total Views",
+                "uniqueVisitors": "Unique Visitors",
+                "bounceRate": "Bounce Rate"
+            },
+            "topPages": "Top Pages"
+        }
+    }
+}

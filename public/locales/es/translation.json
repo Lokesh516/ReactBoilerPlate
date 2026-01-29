@@ -1,0 +1,94 @@
+{
+    "login": {
+        "title": "Iniciar Sesión",
+        "email": "Correo Electrónico",
+        "password": "Contraseña",
+        "rememberMe": "Recuérdame",
+        "submit": "Ingresar",
+        "forgotPassword": "¿Olvidaste tu contraseña?",
+        "noAccount": "¿No tienes una cuenta?",
+        "register": "Regístrate aquí"
+    },
+    "register": {
+        "title": "Registro",
+        "name": "Nombre Completo",
+        "email": "Correo Electrónico",
+        "password": "Contraseña",
+        "confirmPassword": "Confirmar Contraseña",
+        "submit": "Crear Cuenta",
+        "haveAccount": "¿Ya tienes una cuenta?",
+        "login": "Inicia sesión aquí"
+    },
+    "messages": {
+        "loginSuccess": "Inicio de sesión exitoso",
+        "logoutSuccess": "Cierre de sesión exitoso",
+        "invalidCredentials": "Correo electrónico o contraseña inválidos",
+        "sessionExpired": "Tu sesión ha expirado. Por favor inicia sesión nuevamente"
+    },
+    "nav": {
+        "dashboard": "Tablero",
+        "monitoring": "Monitoreo",
+        "welcome": "Bienvenido, {{name}}",
+        "logout": "Cerrar Sesión",
+        "theme": "Tema",
+        "language": "Idioma"
+    },
+    "dashboard": {
+        "title": "Resumen del Tablero",
+        "subtitle": "¡Bienvenido de nuevo! Esto es lo que está pasando hoy.",
+        "stats": {
+            "users": "Usuarios Totales",
+            "revenue": "Ingresos",
+            "sessions": "Sesiones Activas",
+            "vsLastMonth": "vs el mes pasado"
+        },
+        "followers": "Seguidores de GitHub"
+    },
+    "table": {
+        "avatar": "Avatar",
+        "username": "Nombre de usuario",
+        "id": "ID",
+        "profile": "Perfil",
+        "viewProfile": "Ver Perfil de GitHub"
+    },
+    "footer": {
+        "rights": "Todos los derechos reservados."
+    },
+    "monitoring": {
+        "dashboard": {
+            "title": "Monitoreo del Sistema",
+            "tabs": {
+                "api": "Registros de API",
+                "pageViews": "Vistas de Página",
+                "system": "Registros del Sistema"
+            }
+        },
+        "apiLogs": {
+            "title": "Registros de API",
+            "subheader": "Comunicación backend reciente",
+            "columns": {
+                "timestamp": "Marca de tiempo",
+                "method": "Método",
+                "endpoint": "Endpoint",
+                "status": "Estado",
+                "latency": "Latencia"
+            }
+        },
+        "systemLogs": {
+            "title": "Salud del Sistema",
+            "subheader": "Seguimiento de eventos de aplicación",
+            "allSystemsOperational": "Todos los sistemas operativos",
+            "recentEvents": "Eventos Recientes"
+        },
+        "pageViews": {
+            "title": "Vistas de Página",
+            "subheader": "Análisis de actividad de usuario",
+            "stats": {
+                "totalViews": "Vistas Totales",
+                "uniqueVisitors": "Visitantes Únicos",
+                "bounceRate": "Tasa de Rebote"
+            },
+            "topPages": "Páginas Principales"
+        }
+    }
+}

@@ -1,0 +1,94 @@
+{
+    "login": {
+        "title": "Connexion",
+        "email": "Email",
+        "password": "Mot de passe",
+        "rememberMe": "Se souvenir de moi",
+        "submit": "Se connecter",
+        "forgotPassword": "Mot de passe oublié?",
+        "noAccount": "Pas encore de compte?",
+        "register": "S'inscrire ici"
+    },
+    "register": {
+        "title": "Inscription",
+        "name": "Nom complet",
+        "email": "Email",
+        "password": "Mot de passe",
+        "confirmPassword": "Confirmer le mot de passe",
+        "submit": "Créer un compte",
+        "haveAccount": "Vous avez déjà un compte?",
+        "login": "Connectez-vous ici"
+    },
+    "messages": {
+        "loginSuccess": "Connexion réussie",
+        "logoutSuccess": "Déconnexion réussie",
+        "invalidCredentials": "Email ou mot de passe invalide",
+        "sessionExpired": "Votre session a expiré. Veuillez vous reconnecter"
+    },
+    "nav": {
+        "dashboard": "Tableau de bord",
+        "monitoring": "Surveillance",
+        "welcome": "Bienvenue, {{name}}",
+        "logout": "Déconnexion",
+        "theme": "Thème",
+        "language": "Langue"
+    },
+    "dashboard": {
+        "title": "Aperçu du tableau de bord",
+        "subtitle": "Bon retour ! Voici ce qui se passe aujourd'hui.",
+        "stats": {
+            "users": "Utilisateurs totaux",
+            "revenue": "Revenus",
+            "sessions": "Sessions actives",
+            "vsLastMonth": "vs le mois dernier"
+        },
+        "followers": "Abonnés GitHub"
+    },
+    "table": {
+        "avatar": "Avatar",
+        "username": "Nom d'utilisateur",
+        "id": "ID",
+        "profile": "Profil",
+        "viewProfile": "Voir le profil GitHub"
+    },
+    "footer": {
+        "rights": "Tous droits réservés."
+    },
+    "monitoring": {
+        "dashboard": {
+            "title": "Surveillance du système",
+            "tabs": {
+                "api": "Journaux API",
+                "pageViews": "Vues de page",
+                "system": "Journaux système"
+            }
+        },
+        "apiLogs": {
+            "title": "Journaux API",
+            "subheader": "Communication backend récente",
+            "columns": {
+                "timestamp": "Horodatage",
+                "method": "Méthode",
+                "endpoint": "Endpoint",
+                "status": "Statut",
+                "latency": "Latence"
+            }
+        },
+        "systemLogs": {
+            "title": "Santé du système",
+            "subheader": "Suivi des événements d'application",
+            "allSystemsOperational": "Tous les systèmes opérationnels",
+            "recentEvents": "Événements récents"
+        },
+        "pageViews": {
+            "title": "Vues de page",
+            "subheader": "Analyse de l'activité utilisateur",
+            "stats": {
+                "totalViews": "Vues totales",
+                "uniqueVisitors": "Visiteurs uniques",
+                "bounceRate": "Taux de rebond"
+            },
+            "topPages": "Pages populaires"
+        }
+    }
+}

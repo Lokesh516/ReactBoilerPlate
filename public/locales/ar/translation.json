@@ -1,0 +1,94 @@
+{
+    "login": {
+        "title": "تسجيل الدخول",
+        "email": "البريد الإلكتروني",
+        "password": "كلمة المرور",
+        "rememberMe": "تذكرني",
+        "submit": "دخول",
+        "forgotPassword": "هل نسيت كلمة المرور؟",
+        "noAccount": "لا تملك حساباً؟",
+        "register": "سجل هنا"
+    },
+    "register": {
+        "title": "التسجيل",
+        "name": "الاسم الكامل",
+        "email": "البريد الإلكتروني",
+        "password": "كلمة المرور",
+        "confirmPassword": "تأكيد كلمة المرور",
+        "submit": "إنشاء حساب",
+        "haveAccount": "لديك حساب بالفعل؟",
+        "login": "سجل الدخول هنا"
+    },
+    "messages": {
+        "loginSuccess": "تم تسجيل الدخول بنجاح",
+        "logoutSuccess": "تم تسجيل الخروج بنجاح",
+        "invalidCredentials": "بريد إلكتروني أو كلمة مرور غير صحيحة",
+        "sessionExpired": "انتهت صلاحية جلستك. يرجى تسجيل الدخول مرة أخرى"
+    },
+    "nav": {
+        "dashboard": "لوحة القيادة",
+        "monitoring": "المراقبة",
+        "welcome": "مرحباً، {{name}}",
+        "logout": "تسجيل خروج",
+        "theme": "المظهر",
+        "language": "اللغة"
+    },
+    "dashboard": {
+        "title": "نظرة عامة على لوحة القيادة",
+        "subtitle": "مرحباً بعودتك! إليك ما يحدث اليوم.",
+        "stats": {
+            "users": "إجمالي المستخدمين",
+            "revenue": "الإيرادات",
+            "sessions": "الجلسات النشطة",
+            "vsLastMonth": "مقابل الشهر الماضي"
+        },
+        "followers": "متابعو GitHub"
+    },
+    "table": {
+        "avatar": "صورة",
+        "username": "اسم المستخدم",
+        "id": "المعرف",
+        "profile": "الملف الشخصي",
+        "viewProfile": "عرض الملف الشخصي"
+    },
+    "footer": {
+        "rights": "جميع الحقوق محفوظة."
+    },
+    "monitoring": {
+        "dashboard": {
+            "title": "مراقبة النظام",
+            "tabs": {
+                "api": "سجلات API",
+                "pageViews": "مشاهدات الصفحة",
+                "system": "سجلات النظام"
+            }
+        },
+        "apiLogs": {
+            "title": "سجلات API",
+            "subheader": "اتصالات الواجهة الخلفية الحديثة",
+            "columns": {
+                "timestamp": "الطابع الزمني",
+                "method": "الطريقة",
+                "endpoint": "نقطة النهاية",
+                "status": "الحالة",
+                "latency": "الكمون"
+            }
+        },
+        "systemLogs": {
+            "title": "صحة النظام",
+            "subheader": "تتبع أحداث التطبيق",
+            "allSystemsOperational": "جميع الأنظمة تعمل",
+            "recentEvents": "الأحداث الأخيرة"
+        },
+        "pageViews": {
+            "title": "مشاهدات الصفحة",
+            "subheader": "تحليلات نشاط المستخدم",
+            "stats": {
+                "totalViews": "إجمالي المشاهدات",
+                "uniqueVisitors": "الزوار الفريدون",
+                "bounceRate": "معدل الارتداد"
+            },
+            "topPages": "أفضل الصفحات"
+        }
+    }
+}
