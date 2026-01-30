@@ -74,13 +74,13 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ dropUp = false, al
                                         >
                                             <div className={`
                         p-2 rounded-lg
-                        ${isActive ? 'bg-primary-500 text-white' : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400'}
+                        ${isActive ? 'bg-primary-500 text-dark' : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400'}
                       `}>
                                                 <Icon className="w-4 h-4" />
                                             </div>
 
                                             <div className="flex-1 text-left">
-                                                <div className="font-medium text-gray-900 dark:text-white">
+                                                <div className="font-medium text-dark">
                                                     {theme.label}
                                                 </div>
                                                 <div className="text-xs text-gray-500 dark:text-gray-400">

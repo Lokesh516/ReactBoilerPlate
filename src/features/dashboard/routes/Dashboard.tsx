@@ -48,7 +48,7 @@ const Dashboard: React.FC = () => {
                 {/* Header */}
                 <div className="flex items-center justify-between">
                     <div>
-                        <h1 className="text-3xl font-bold text-theme-text-primary">
+                        <h1 className="text-3xl font-bold text-light">
                             {t('dashboard.title')}
                         </h1>
                         <p className="mt-1 text-theme-text-secondary">
