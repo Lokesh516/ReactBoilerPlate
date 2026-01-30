@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { FollowersState, Follower } from '../types';
 import { followersApi } from '../api/followersApi';
+import { ApiService } from '@/services/apiService';
 
 const initialState: FollowersState = {
     items: [],
@@ -13,9 +14,14 @@ export const fetchFollowers = createAsyncThunk(
     'followers/fetchFollowers',
     async (_, { rejectWithValue }) => {
         try {
+            // 🔴 CRITICAL: reset chain per user action
+            ApiService.resetChain();
+
             return await followersApi.getFollowers();
         } catch (error: any) {
-            return rejectWithValue(error.message || 'Failed to fetch followers');
+            return rejectWithValue(
+                error.message || 'Failed to fetch followers'
+            );
         }
     }
 );

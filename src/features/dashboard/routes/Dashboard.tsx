@@ -4,8 +4,12 @@ import { useTranslation } from 'react-i18next';
 import { MainLayout } from '@/components/layout/MainLayout/MainLayout';
 import { EiCard } from '@/components/ui';
 import { FollowersTable } from '@/features/dashboard/components/FollowersTable';
+import { FeedsTable } from '@/features/dashboard/components/FeedsTable';
+import { EmojisTable } from '@/features/dashboard/components/EmojisTable';
+import { EventsTable } from '@/features/dashboard/components/EventsTable';
 import { useAppDispatch } from '@/store/hooks';
 import { fetchFollowers } from '../store/followersSlice';
+import { fetchCompleteDashboardData } from '../store/dashboardSlice';
 
 const Dashboard: React.FC = () => {
     const { t } = useTranslation();
@@ -13,6 +17,7 @@ const Dashboard: React.FC = () => {
 
     useEffect(() => {
         dispatch(fetchFollowers());
+        dispatch(fetchCompleteDashboardData('octocat'));
     }, [dispatch]);
 
     const stats = [
@@ -98,6 +103,21 @@ const Dashboard: React.FC = () => {
                 {/* Followers Table */}
                 <div className="animate-slide-up" style={{ animationDelay: '300ms' }}>
                     <FollowersTable />
+                </div>
+
+                {/* Feeds Table */}
+                <div className="animate-slide-up" style={{ animationDelay: '400ms' }}>
+                    <FeedsTable />
+                </div>
+
+                {/* Emojis Table */}
+                <div className="animate-slide-up" style={{ animationDelay: '500ms' }}>
+                    <EmojisTable />
+                </div>
+
+                {/* Events Table */}
+                <div className="animate-slide-up" style={{ animationDelay: '600ms' }}>
+                    <EventsTable />
                 </div>
             </div>
         </MainLayout>

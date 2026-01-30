@@ -44,4 +44,9 @@ export const ApiService = {
         const response: AxiosResponse<T> = await api.delete(url, config);
         return response.data;
     },
+    resetChain: () => {
+        api.interceptors.request.use((config) => {
+            return config;
+        });
+    }
 };

@@ -7,5 +7,8 @@ export const API_CONFIG = {
     TIMEOUT: 15000,
     ENDPOINTS: {
         FOLLOWERS: '/users/octocat/followers',
+        FEEDS:'/feeds',
+        EMOGIS:'/emojis',
+        EVENTS:'/events',
     },
 };
