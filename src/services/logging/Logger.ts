@@ -209,6 +209,14 @@ export class Logger {
             return;
         }
 
+        // Feature: Mock Remote Logging for demonstration/testing
+        if (this.config.remoteEndpoint === 'mock') {
+            console.groupCollapsed(`[Logger] Mock Remote Transport (${entries.length} entries)`);
+            console.table(entries.map(e => ({ level: e.level, msg: e.message, time: e.timestamp })));
+            console.groupEnd();
+            return;
+        }
+
         try {
             const response = await fetch(this.config.remoteEndpoint, {
                 method: 'POST',

@@ -31,6 +31,9 @@
         "welcome": "Welcome, {{name}}",
         "logout": "Logout",
         "theme": "Theme",
+        "pageViews": "Page Views",
+        "apiLogs": "API Logs",
+        "systemHealth":"System Health",
         "language": "Language"
     },
     "dashboard": {
@@ -42,6 +45,8 @@
             "sessions": "Active Sessions",
             "vsLastMonth": "vs last month"
         },
+        "feeds": "Feeds",
+        
         "followers": "GitHub Followers"
     },
     "table": {
@@ -49,7 +54,19 @@
         "username": "Username",
         "id": "ID",
         "profile": "Profile",
-        "viewProfile": "View GitHub Profile"
+        "viewProfile": "View GitHub Profile",
+        "actions": "Actions",
+        "publishedAt": "Published At",
+        "content": "Table Content",
+        "title": "Table Title",
+        "emoji": "Emoji",
+        "name": "Name",
+        "category": "Category",
+        "type": "Type",
+        "actor": "Actor",
+        "repository": "Repository",
+        "createdAt": "Created At",
+        "copy": "Copy"
     },
     "footer": {
         "rights": "All rights reserved.",

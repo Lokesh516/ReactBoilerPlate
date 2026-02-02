@@ -31,6 +31,9 @@
         "welcome": "欢迎，{{name}}",
         "logout": "登出",
         "theme": "主题",
+        "pageViews": "页面浏览量",
+        "apiLogs": "API 日志",
+        "systemHealth": "系统健康",
         "language": "语言"
     },
     "dashboard": {
@@ -42,6 +45,9 @@
             "sessions": "活跃会话",
             "vsLastMonth": "对比上月"
         },
+        "feeds": "订阅源",
+        "emojis": "表情符号",
+        "events": "事件",
         "followers": "GitHub 关注者"
     },
     "table": {
@@ -49,7 +55,19 @@
         "username": "用户名",
         "id": "ID",
         "profile": "资料",
-        "viewProfile": "查看 GitHub 资料"
+        "viewProfile": "查看 GitHub 资料",
+        "actions": "操作",
+        "publishedAt": "发布时间",
+        "content": "表格内容",
+        "title": "表格标题",
+        "emoji": "表情符号",
+        "name": "名称",
+        "category": "类别",
+        "type": "类型",
+        "actor": "执行者",
+        "repository": "仓库",
+        "createdAt": "创建时间",
+        "copy": "复制"
     },
     "footer": {
         "rights": "版权所有。"

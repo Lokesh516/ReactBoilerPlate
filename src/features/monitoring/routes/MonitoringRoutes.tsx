@@ -1,12 +1,15 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import MonitoringDashboard from '../pages/MonitoringDashboard';
+import MonitoringDashboardContent from '../pages/MonitoringDashboard';
+import { MonitoringProvider } from '../context/MonitoringContext';
 
 const MonitoringRoutes: React.FC = () => {
     return (
-        <Routes>
-            <Route index element={<MonitoringDashboard />} />
-        </Routes>
+        <MonitoringProvider>
+            <Routes>
+                <Route index element={<MonitoringDashboardContent />} />
+            </Routes>
+        </MonitoringProvider>
     );
 };
 

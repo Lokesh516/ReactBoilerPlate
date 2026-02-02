@@ -7,6 +7,8 @@ import type {
 import { API_CONFIG } from '@/config/apiConfig';
 import { ApiCallContext } from '@/services/apiCallContext';
 
+import { v4 as uuidv4 } from 'uuid';
+
 const api = axios.create({
     baseURL: API_CONFIG.BASE_URL,
     headers: {
@@ -29,6 +31,11 @@ api.interceptors.request.use(
 
         if (token && config.headers && !config.url?.startsWith('http')) {
             config.headers.Authorization = `Bearer ${token}`;
+        }
+
+        // 🔒 Security: Add Idempotency-Key for mutation requests
+        if (['post', 'put', 'patch'].includes(config.method?.toLowerCase() || '')) {
+            config.headers['Idempotency-Key'] = uuidv4();
         }
 
         return config;

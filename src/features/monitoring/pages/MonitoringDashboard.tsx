@@ -1,17 +1,37 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSearchParams } from 'react-router-dom';
 import { MainLayout } from '@/components/layout/MainLayout/MainLayout';
 import { EiCard } from '@/components/ui/EiCard/EiCard';
 import { EiButton } from '@/components/ui/EiButton/EiButton';
 import ApiLogs from '../components/ApiLogs';
 import PageViews from '../components/PageViews';
 import SystemLogs from '../components/SystemLogs';
+import { useMonitoring } from '../context/MonitoringContext';
+import type { MonitoringTab } from '../context/MonitoringContext';
 
-type Tab = 'api' | 'page-views' | 'system';
-
-const MonitoringDashboard: React.FC = () => {
+const MonitoringDashboardContent: React.FC = () => {
     const { t } = useTranslation();
-    const [activeTab, setActiveTab] = useState<Tab>('api');
+    const { activeTab, setActiveTab } = useMonitoring();
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    // Sync URL -> Context
+    useEffect(() => {
+        const view = searchParams.get('view') as MonitoringTab;
+        if (view && ['api', 'page-views', 'system'].includes(view)) {
+            setActiveTab(view);
+        } else if (!view) {
+            // Default to API if no param, and update URL
+            setSearchParams({ view: 'api' }, { replace: true });
+            setActiveTab('api');
+        }
+    }, [searchParams, setActiveTab, setSearchParams]);
+
+    // Sync Context -> URL (Active Tab Click)
+    const handleTabChange = (tab: MonitoringTab) => {
+        setActiveTab(tab);
+        setSearchParams({ view: tab });
+    };
 
     return (
         <MainLayout>
@@ -21,20 +41,20 @@ const MonitoringDashboard: React.FC = () => {
                 <EiCard>
                     <div className="flex space-x-2 border-b dark:border-gray-700 pb-2 mb-4">
                         <EiButton
-                            variant={'ghost'}
-                            onClick={() => setActiveTab('api')}
+                            variant={activeTab === 'api' ? 'primary' : 'ghost'}
+                            onClick={() => handleTabChange('api')}
                         >
                             {t('monitoring.dashboard.tabs.api')}
                         </EiButton>
                         <EiButton
-                            variant={'ghost'}
-                            onClick={() => setActiveTab('page-views')}
+                            variant={activeTab === 'page-views' ? 'primary' : 'ghost'}
+                            onClick={() => handleTabChange('page-views')}
                         >
                             {t('monitoring.dashboard.tabs.pageViews')}
                         </EiButton>
                         <EiButton
-                            variant={'ghost'}
-                            onClick={() => setActiveTab('system')}
+                            variant={activeTab === 'system' ? 'primary' : 'ghost'}
+                            onClick={() => handleTabChange('system')}
                         >
                             {t('monitoring.dashboard.tabs.system')}
                         </EiButton>
@@ -51,4 +71,4 @@ const MonitoringDashboard: React.FC = () => {
     );
 };
 
-export default MonitoringDashboard;
+export default MonitoringDashboardContent;

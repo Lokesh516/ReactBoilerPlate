@@ -31,6 +31,9 @@
         "welcome": "مرحباً، {{name}}",
         "logout": "تسجيل خروج",
         "theme": "المظهر",
+        "pageViews": "مشاهدات الصفحة",
+        "apiLogs": "سجلات API",
+        "systemHealth": "صحة النظام",
         "language": "اللغة"
     },
     "dashboard": {
@@ -42,6 +45,9 @@
             "sessions": "الجلسات النشطة",
             "vsLastMonth": "مقابل الشهر الماضي"
         },
+        "emojis": "الرموز التعبيرية",
+        "feeds": "التغذية",
+        "events": "الأحداث",
         "followers": "متابعو GitHub"
     },
     "table": {
@@ -49,7 +55,19 @@
         "username": "اسم المستخدم",
         "id": "المعرف",
         "profile": "الملف الشخصي",
-        "viewProfile": "عرض الملف الشخصي"
+        "viewProfile": "عرض الملف الشخصي",
+        "actions": "إجراءات",
+        "publishedAt": "تاريخ النشر",
+        "content": "محتوى الجدول",
+        "title": "عنوان الجدول",
+        "emoji": "الرموز التعبيرية",
+        "name": "الاسم",
+        "category": "الفئة",
+        "type": "النوع",
+        "actor": "الممثل",
+        "repository": "المستودع",
+        "createdAt": "أنشئت في",
+        "copy": "نسخ"
     },
     "footer": {
         "rights": "جميع الحقوق محفوظة."
@@ -68,6 +86,16 @@
                 "pageViews": "مشاهدات الصفحة",
                 "timestamp": "الطابع الزمني"
             }
+        },
+        "pageViews": {
+            "title": "مشاهدات الصفحة",
+            "subheader": "تحليلات نشاط المستخدم",
+            "stats": {
+                "totalViews": "إجمالي المشاهدات",
+                "uniqueVisitors": "الزوار الفريدون",
+                "bounceRate": "معدل الارتداد"
+            },
+            "topPages": "أفضل الصفحات"
         },
         "apiLogs": {
             "title": "سجلات API",

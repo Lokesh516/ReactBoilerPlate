@@ -1,15 +1,16 @@
-import { LayoutDashboard, Activity, Users } from 'lucide-react';
+import { LayoutDashboard, Activity, Users, FileText, AlertTriangle } from 'lucide-react';
 
 export interface NavigationItem {
     label: string;
     path: string;
-    icon: React.ElementType; // Using React.ElementType to type the icon component
-    roles: ('admin' | 'user' | 'superadmin')[]; // Roles allowed to see this item
+    icon: React.ElementType;
+    roles: ('admin' | 'user' | 'superadmin')[];
+    children?: NavigationItem[]; // Scalable: Support for nested submenus
 }
 
 export const NAVIGATION_ITEMS: NavigationItem[] = [
     {
-        label: 'nav.dashboard', // Using translation key
+        label: 'nav.dashboard',
         path: '/dashboard',
         icon: LayoutDashboard,
         roles: ['admin', 'user', 'superadmin'],
@@ -18,7 +19,27 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
         label: 'nav.monitoring',
         path: '/monitoring',
         icon: Activity,
-        roles: ['admin', 'superadmin'], // Also simulate admin seeing this? Or just 'admin'?
+        roles: ['admin', 'superadmin'],
+        children: [
+            {
+                label: 'nav.apiLogs',
+                path: '/monitoring?view=api',
+                icon: FileText,
+                roles: ['admin', 'superadmin'],
+            },
+            {
+                label: 'nav.pageViews',
+                path: '/monitoring?view=page-views',
+                icon: FileText,
+                roles: ['admin', 'superadmin'],
+            },
+            {
+                label: 'nav.systemHealth',
+                path: '/monitoring?view=system',
+                icon: AlertTriangle,
+                roles: ['admin', 'superadmin'],
+            }
+        ]
     },
     {
         label: 'User Management',
@@ -27,3 +48,4 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
         roles: ['superadmin'],
     },
 ];
+

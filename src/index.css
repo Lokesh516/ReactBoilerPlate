@@ -180,21 +180,21 @@ html {
   /* background-color: red; */
   /* margin-left: auto;
   margin-right: auto; */
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-inline-start: 3rem;
+  padding-inline-end: 3rem;
 }
 
 @media (min-width: 640px) {
   .container-custom {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .container-custom {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;
   }
 }
 

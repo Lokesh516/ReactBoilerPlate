@@ -31,6 +31,9 @@
         "welcome": "Bienvenido, {{name}}",
         "logout": "Cerrar Sesión",
         "theme": "Tema",
+        "pageViews": "Vistas de Página",
+        "apiLogs": "Registros de API",
+        "systemHealth": "Salud del Sistema",
         "language": "Idioma"
     },
     "dashboard": {
@@ -42,6 +45,9 @@
             "sessions": "Sesiones Activas",
             "vsLastMonth": "vs el mes pasado"
         },
+        "feeds": "Alimentación",
+        "emojis": "Emojis",
+        "events": "Eventos",
         "followers": "Seguidores de GitHub"
     },
     "table": {
@@ -49,7 +55,19 @@
         "username": "Nombre de usuario",
         "id": "ID",
         "profile": "Perfil",
-        "viewProfile": "Ver Perfil de GitHub"
+        "viewProfile": "Ver Perfil de GitHub",
+        "actions": "Acciones",
+        "publishedAt": "Fecha de publicación",
+        "content": "Contenido de la tabla",
+        "title": "Título de la tabla",
+        "emoji": "Emoji",
+        "name": "Nombre",
+        "category": "Categoría",
+        "type": "Tipo",
+        "actor": "Actor",
+        "repository": "Repositorio",
+        "createdAt": "Creado el",
+        "copy": "Copiar"
     },
     "footer": {
         "rights": "Todos los derechos reservados."
