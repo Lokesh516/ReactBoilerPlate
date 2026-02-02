@@ -61,6 +61,12 @@
                 "api": "Journaux API",
                 "pageViews": "Vues de page",
                 "system": "Journaux système"
+            },
+            "tabItems": {
+                "api": "Journaux API",
+                "pageTitle": "Titre de la page",
+                "pageViews": "Vues de page",
+                "timestamp": "Horodatage"
             }
         },
         "apiLogs": {

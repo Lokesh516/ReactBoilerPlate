@@ -61,6 +61,12 @@
                 "api": "API 日志",
                 "pageViews": "页面浏览量",
                 "system": "系统日志"
+            },
+            "tabItems": {
+                "api": "API 日志",
+                "pageTitle": "页面标题",
+                "pageViews": "页面浏览量",
+                "timestamp": "时间戳"
             }
         },
         "apiLogs": {

@@ -62,7 +62,7 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ dropUp = fal
                       `}
                                         >
                                             <div className="flex flex-col items-start">
-                                                <span className="font-medium text-gray-900 dark:text-white text-sm">
+                                                <span className="font-medium text-light">
                                                     {lang.nativeName}
                                                 </span>
                                                 <span className="text-xs text-gray-500 dark:text-gray-400">

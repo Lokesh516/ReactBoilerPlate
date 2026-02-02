@@ -61,6 +61,12 @@
                 "api": "Registros de API",
                 "pageViews": "Vistas de Página",
                 "system": "Registros del Sistema"
+            },
+            "tabItems": {
+                "api": "Registros de API",
+                "pageTitle": "Título de la página",
+                "pageViews": "Vistas de página",
+                "timestamp": "Marca de tiempo"
             }
         },
         "apiLogs": {

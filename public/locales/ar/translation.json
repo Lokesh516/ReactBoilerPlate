@@ -61,6 +61,12 @@
                 "api": "سجلات API",
                 "pageViews": "مشاهدات الصفحة",
                 "system": "سجلات النظام"
+            },
+            "tabItems": {
+                "api": "سجلات API",
+                "pageTitle": "عنوان الصفحة",
+                "pageViews": "مشاهدات الصفحة",
+                "timestamp": "الطابع الزمني"
             }
         },
         "apiLogs": {

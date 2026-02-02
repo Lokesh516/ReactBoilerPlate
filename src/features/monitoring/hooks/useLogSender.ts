@@ -12,19 +12,21 @@ export const useLogSender = () => {
 
     // Refs to hold latest state for event listeners
     const logsRef = useRef({ systemLogs, apiCalls });
+    const lastFlushTimeRef = useRef<number>(0);
 
     useEffect(() => {
         logsRef.current = { systemLogs, apiCalls };
     }, [systemLogs, apiCalls]);
 
     // Configuration
-    const BATCH_INTERVAL = 30000; // 30 seconds
-    const BATCH_SIZE_THRESHOLD = 20;
+    const BATCH_INTERVAL = 600000; // 10 minutes
+    const BATCH_SIZE_THRESHOLD = 2000;
 
     /**
      * Function to flush logs to the server
+     * Only clears logs if 10 minutes have passed since last flush
      */
-    const flushLogs = (logs: typeof logsRef.current) => {
+    const flushLogs = (logs: typeof logsRef.current, forceClear = false) => {
         const { systemLogs, apiCalls } = logs;
 
         if (systemLogs.length === 0 && apiCalls.length === 0) return;
@@ -42,35 +44,41 @@ export const useLogSender = () => {
         const sent = navigator.sendBeacon('/api/logs/batch', blob);
 
         if (sent) {
-            // Optimistically clear logs from Redux if beacon was queued
-            dispatch(clearLogs());
+            // Update last flush time
+            lastFlushTimeRef.current = Date.now();
+
+            // Only clear logs if it's been 10 minutes since last flush OR force clear is true
+            const timeSinceLastFlush = Date.now() - lastFlushTimeRef.current;
+            if (forceClear || timeSinceLastFlush >= BATCH_INTERVAL) {
+                dispatch(clearLogs());
+            }
         }
     };
 
-    // 1. Periodic Flush
+    // 1. Periodic Flush - Force clear after 10 minutes
     useEffect(() => {
         const intervalId = setInterval(() => {
             if (logsRef.current.systemLogs.length > 0 || logsRef.current.apiCalls.length > 0) {
-                flushLogs(logsRef.current);
+                flushLogs(logsRef.current, true); // Force clear on periodic flush
             }
         }, BATCH_INTERVAL);
 
         return () => clearInterval(intervalId);
     }, [dispatch]);
 
-    // 2. Flush on Size Threshold
+    // 2. Flush on Size Threshold - Don't clear immediately
     useEffect(() => {
         const totalLogs = systemLogs.length + apiCalls.length;
         if (totalLogs >= BATCH_SIZE_THRESHOLD) {
-            flushLogs(logsRef.current);
+            flushLogs(logsRef.current, false); // Don't clear immediately
         }
     }, [systemLogs, apiCalls, dispatch]);
 
-    // 3. Flush on Visibility Change (Tab Close/Hide)
+    // 3. Flush on Visibility Change (Tab Close/Hide) - Force clear
     useEffect(() => {
         const handleVisibilityChange = () => {
             if (document.visibilityState === 'hidden') {
-                flushLogs(logsRef.current);
+                flushLogs(logsRef.current, true); // Force clear on tab close
             }
         };
 

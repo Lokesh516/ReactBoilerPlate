@@ -62,7 +62,14 @@
                 "api": "API Logs",
                 "pageViews": "Page Views",
                 "system": "System Logs"
+            },
+            "tabItems": {
+                "api": "Route",
+                "pageTitle": "Page Title",
+                "pageViews": "Page Views",
+                "timestamp": "Timestamp"
             }
+
         },
         "apiLogs": {
             "title": "API Logs",
