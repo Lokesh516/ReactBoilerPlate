@@ -37,8 +37,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
             {/* Logo Area */}
             <div className={`h-20 flex items-center ${isCollapsed && !mobileMenuOpen ? 'justify-center px-0' : 'px-6'} border-b border-[rgb(var(--color-border))] transition-all duration-300`}>
                 <div className="flex items-center gap-3 overflow-hidden">
-                    <div className="w-10 h-10 shrink-0 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-lg shadow-primary-500/20">
-                        <span className="text-white dark:text-gray-900 font-bold text-xl">Ei</span>
+                    <div className="w-10 h-10 shrink-0 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-xs shadow-primary-500/20">
+                        <span className="text-light font-bold text-xl">Ei</span>
                     </div>
 
                     {(!isCollapsed || mobileMenuOpen) && (

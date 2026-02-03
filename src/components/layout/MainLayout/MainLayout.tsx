@@ -109,7 +109,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
                         {/* User Profile & Logout */}
                         <div className="flex items-center gap-3 pl-2">
                             <div className="hidden md:flex flex-col items-end">
-                                <span className="text-sm font-medium text-gray-700 dark:text-gray-200 capitalize">
+                                <span className="text-sm font-medium text-light capitalize">
                                     {user?.role || 'User'}
                                 </span>
                             </div>
